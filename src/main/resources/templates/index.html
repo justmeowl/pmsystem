@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css?version=51"/>
+    <link rel="stylesheet" type="text/css" href="/css/entry-styles.css?version=51"/>
+    <title>PM System</title>
+</head>
+<body>
+<div id="application-main">
+    <div id="layout-main">
+        <main id="info-content">
+          <header id="logo">PM System</header>
+          <nav id="main-nav">
+            <div class="sign-in-button">
+              <a href="/signin">SIGN IN</a>
+            </div>
+            <div class="sign-up-button">
+              <a href="/signup">SIGN UP</a>
+            </div>
+          </nav>
+        </main>
+      </div>
+      <div id="layout-modal">
+        <th:block th:replace="~{'/fragments/entry/' + ${modalWindow} :: ${modalWindow}} ?: ~{fragments/empty-fragment :: empty-fragment}"></th:block>
+      </div>
+</div>
+</body>
+</html>

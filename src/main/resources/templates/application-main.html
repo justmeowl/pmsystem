@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css?version=52"/>
+  <link rel="stylesheet" type="text/css" href="/css/system-styles.css?version=52"/>
+  <title>PM System | Projects</title>
+</head>
+<body>
+<div id="application-main">
+  <nav>
+    <div id="logo">PM SYSTEM</div>
+    <div id="button-log-out"><a href="/logout">Log out</a></div>
+  </nav>
+  <div id="layout-main">
+    <div id="layout-project">
+      <div id="project-content">
+        <div class="title-table">
+          <h2>Projects</h2>
+          <a href="/project/add">Add</a>
+        </div>
+        <table id="project-table">
+          <tr th:each="project : ${projects}">
+            <td><a th:href="@{/project/{projectId}/task/all(projectId=${project.id})}" th:text="${project.name}"></a></td>
+            <td class="action-buttons">
+              <a id="open-model-button" th:href="@{/project/{projectId}/edit(projectId=${project.id})}">🖉</a>
+              <a th:href="@{/project/{projectId}/delete(projectId=${project.id})}">-</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="layout-edit">
+      <th:block th:replace="~{'/fragments/system/' + ${modalWindow} :: ${modalWindow}} ?: ~{fragments/empty-fragment :: empty-fragment}"></th:block>
+    </div>
+  </div>
+</div>
+</body>
+</html>
