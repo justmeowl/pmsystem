@@ -1,0 +1,31 @@
+<div id="modal-dialog" th:fragment="tasks">
+      <div class="title-table">
+        <h2>Tasks</h2>
+        <a th:href="@{/project/{projectId}/employee-design(projectId=${projectId})}">Calculate</a>
+        <a th:href="@{/project/{projectId}/task/add(projectId=${activeProjectId})}">Add</a>
+      </div>
+      <div class="error-message">
+        <small th:text="${errorMessage} ?: ''"></small>
+      </div>
+      <table id="task-table">
+        <tr id="table-header">
+          <td>№</td>
+          <td>Name</td>
+          <td>Runtime</td>
+          <td>Previous Number</td>
+          <td></td>
+        </tr>
+        <tr th:each="task : ${tasks}">
+          <td th:text="${task.number}">1</td>
+          <td th:text="${task.name}">2</td>
+          <td th:text="${task.runtime}">3</td>
+          <td th:text="${task.connections}">
+          </td>
+          <td class="action-buttons">
+            <a th:href="@{/project/{projectId}/task/{taskNumber}/edit(projectId=${activeProjectId}, taskNumber=${task.number})}">🖉</a>
+            <a th:href="@{/project/{projectId}/task/{taskNumber}/delete(projectId=${activeProjectId}, taskNumber=${task.number})}">-</a>
+            <!--                        <a th:href="@{/project/{projectId}/task/{taskId}(projectId=${projectId}, taskId=${task.id})}">-</a>-->
+          </td>
+        </tr>
+      </table>
+</div>

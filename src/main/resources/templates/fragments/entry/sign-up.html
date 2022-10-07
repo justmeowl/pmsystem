@@ -1,0 +1,14 @@
+<div id="modal-dialog" th:fragment="sign-up">
+  <div id="modal-content">
+    <form class="signup-form" th:action="@{/signup}" method="post">
+      <h1>Create Account!</h1>
+      <div class="user-error-message">
+        <small th:text="${errorMessage} ?: ''"></small>
+      </div>
+      <input type="text" name="username" placeholder="Enter username"/><br/>
+      <input type="password" name="password" placeholder="Password"/><br/>
+      <input type="password" name="confirmPassword" placeholder="Confirm Password"/><br/>
+      <button>Sign up</button>
+    </form>
+  </div>
+</div>

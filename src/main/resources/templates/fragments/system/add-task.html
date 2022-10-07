@@ -1,0 +1,23 @@
+<div id="modal-dialog" th:fragment="add-task">
+  <div id="modal-content">
+    <form th:action="@{/project/{id}/task/add(id=${activeProjectId})}" method="post">
+      <div class="error-message">
+        <small th:text="${errorMessage} ?: ''"></small>
+      </div>
+      <table>
+        <tr>
+          <td><input type="number" placeholder="№" name="number" /></td>
+          <td><input type="text" placeholder="Task name" name="name" /></td>
+        </tr>
+        <tr>
+          <td><input type="number" placeholder="Runtime" name="runtime" /></td>
+          <td><input type="text" placeholder="Previous Task Number" name="connectionsText" /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button>Add</button></td>
+          <td></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

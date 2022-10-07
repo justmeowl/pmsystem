@@ -1,0 +1,14 @@
+<div id="modal-dialog" th:fragment="sign-in">
+  <div id="modal-content">
+    <form class="auth-form" th:action="@{/signin}" method="post">
+      <h1>Hello Again!</h1>
+      Welcome back You've Been Missed!<br/>
+      <div class="user-error-message">
+        <small th:text="${errorMessage} ?: ''"></small>
+      </div>
+      <input type="text" name="username" placeholder="Enter username"/><br/>
+      <input type="password" name="password" placeholder="Password"/><br/>
+      <button>Sign in</button>
+    </form>
+  </div>
+</div>

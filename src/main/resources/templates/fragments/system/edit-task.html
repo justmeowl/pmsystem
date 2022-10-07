@@ -1,0 +1,31 @@
+<div id="modal-dialog" th:fragment="edit-task">
+  <div id="modal-content">
+    <form th:action="@{/project/{projectId}/task/{taskNumber}/edit(projectId=${projectId}, taskNumber=${activeTask.number})}" method="post">
+      <div class="error-message">
+        <small th:text="${errorMessage} ?: ''"></small>
+      </div>
+      <table>
+        <tr>
+          <td><label for="number">№</label></td>
+          <td><label for="name">Task name</label></td>
+        </tr>
+        <tr>
+          <td><input type="number" th:placeholder="${activeTask.number}" name="number" id="number"/></td>
+          <td><input type="text" th:placeholder="${activeTask.name}" name="name" id="name"/></td>
+        </tr>
+        <tr>
+          <td><label for="runtime">Runtime</label></td>
+          <td><label for="connectionsText">Previous Task Number</label></td>
+        </tr>
+        <tr>
+          <td><input type="number" th:placeholder="${activeTask.runtime}" name="runtime" id="runtime"/></td>
+          <td><input type="text" th:placeholder="${activeTask.connections}" name="connectionsText" id="connectionsText"/></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button>Edit</button></td>
+          <td></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>

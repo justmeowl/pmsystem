@@ -1,0 +1,19 @@
+<div id="modal-dialog" th:fragment="add-project">
+  <div id="modal-content">
+    <div class="error-message">
+      <small th:text="${errorMessage} ?: ''"></small>
+    </div>
+    <form th:action="@{/project/add}" method="post">
+      <table>
+        <tr>
+          <td><input type="text" placeholder="Project name" name="name" id="name"/></td>
+          <td><input type="number" placeholder="Number of Employees" name="numberEmployees" id="numberEmployees"/><br/></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button>Add</button></td>
+          <td></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
