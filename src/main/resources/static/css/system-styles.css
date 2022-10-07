@@ -1,0 +1,133 @@
+@import "styles.css";
+
+::-webkit-scrollbar {
+    width: 0.5vw;
+    background-color: var(--gray-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue-color);
+    border-radius: 0.3vw;
+}
+
+nav{
+    width: 100vw;
+    height: 8vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: var(--font-weight-max);
+    box-shadow: 0 0.2vh 1vh rgba(159, 177, 188, 0.6);
+
+}
+
+#layout-main{
+    width: 100vw;
+    height: 92vh;
+    display: flex;
+}
+
+#logo{
+    user-select: none;
+    font-size: 30px;
+    font-family: var(--header-font);
+    color: var(--yellow-color);
+}
+
+#layout-project, #layout-edit{
+    padding: 1vh 1vw;
+    overflow-y: auto;
+}
+
+#layout-project{
+    flex: 1;
+}
+
+#layout-edit{
+    background-color: rgba(164, 164, 164, 0.351);
+    flex: 3;
+}
+
+#task-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#table-header{
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    font-weight: var(--font-weight);
+}
+
+#task-table tr{
+    border-bottom: 0.1vh solid var(--gray-color);
+}
+
+#task-table td{
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+#task-table td:nth-of-type(1){
+    width: 10%;
+}
+#task-table td:nth-of-type(2){
+    width: 50%;
+}
+#task-table td:nth-of-type(3){
+    width: 10%;
+}
+#task-table td:nth-of-type(4){
+    width: 10%;
+}
+#task-table td:nth-of-type(5){
+    width: 10%;
+    /*display: flex;*/
+}
+
+.action-buttons a {
+    width: 24px;
+    height: 24px;
+    border-radius: 15px;
+    margin: 1px 5px;
+    float: left;
+    border: none;
+    outline: none;
+    background:none;
+    /*color: var(--dark-blue-color);*/
+    /*color: var();*/
+    font-size: 18px;
+    text-align: center;
+}
+
+#project-table td:nth-of-type(1){
+    width: 80%;
+}
+
+#project-table td:nth-of-type(2){
+    width: 20%;
+}
+
+.title-table{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-table a{
+    font-size: 14px;
+    border-radius: 8px;
+    margin-bottom: 2px;
+    padding: 1px 5px;
+    display: block;
+    background-color: var(--yellow-color);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    transition: 0.8s;
+}
+
+
+.title-table a:hover{
+    color: white;
+    background-color: var(--blue-color);
+}

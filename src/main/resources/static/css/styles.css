@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+:root {
+    /*--header-height: 3rem;*/
+    /* COLORS */
+    --yellow-color: hsl(47, 73%, 58%);
+    --dark-blue-color: hsl(201, 38%, 29%);
+    --blue-color: hsl(203, 17%, 51%);
+    --gray-color: hsl(203, 18%, 68%);
+    --white-color: hsl(38, 8%, 81%);
+    --error-color: hsl(0, 64%, 60%);
+    /* --text-color */
+    /* --sub-text-color:  */
+    /* --title-color: ; */
+    /* FONTS */
+    --font: 'Poppins';
+    --font-weight-min: 400;
+    --font-weight: 500;
+    --font-weight-max: 600;
+    --header-font: 'Cinzel';
+    /* TEXT */
+    --max-font-size: 18x;
+    --font-size: 16px;
+    --min-font-size: 14px;
+    --title-font-size: 22px;
+    --logo-font-size:100px;
+    --text-color: var(--dark-blue-color);
+    --logo-color: var(--yellow-color);
+    --title-color: var(--yellow-color);
+}
+
+@media (min-width: 993px) {
+    body{
+        font-size: var(--font-size);
+    }
+
+    h1{
+        font-size: var(--title-font-size);
+    }
+
+    h2{
+        font-size: var(--font-size);
+    }
+}
+
+/*@media screen and (max-width: 992px) {*/
+
+/*}*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    /* background-color: var(--first-background-color); */
+    font-family: var(--font);
+    font-weight: var(--font-weight-min);
+    color: var(--text-color);
+    user-select: none;
+}
+
+h1{
+    color: var(--title-color);
+    font-weight: var(--font-weight-max);
+}
+
+h2{
+    color: var(--title-color);
+    font-weight: normal;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--dark-blue-color);
+}
+
+form{
+    line-height: 30px;
+}
+
+form input{
+    margin-top: 20px;
+    background: linear-gradient(45grad, var(--white-color), var(--gray-color));
+    background-size: 200% 200%;
+    border: none;
+    outline: none;
+    color: var(--dark-blue-color);
+}
+
+
+form button{
+    border-radius: 10px;
+    margin-top: 20px;
+    background: var(--yellow-color);
+    border: none;
+    font-size: var(--font-size);
+    color: var(--dark-blue-color);
+}
+
+form input, button{
+    width: 300px;
+    height: 35px;
+}
+
+form input::placeholder, input{
+    font-size: var(--font-size);
+    padding: 5px;
+}
+
+form input::placeholder{
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.24);
+}
+
+form input:active{
+    background:var(--white-color);
+}
+
+
+.error-message {
+    color: var(--error-color);
+    font-size: var(--min-font-size);
+}
+
+.user-error-message {
+    color: var(--dark-blue-color);
+    font-size: var(--min-font-size);
+}
